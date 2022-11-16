@@ -8,13 +8,15 @@ import org.example.handler.Handler;
 import org.example.handler.SimpleHandler;
 
 public class Main {
-    Writer writer = new ConsoleWriter();
-    Reader reader = new ConsoleReader();
-    Handler handler = new SimpleHandler();
-    while(true){
-        Request message = reader.readRequest();
-        Response response = handler.requestHandler(message);
-        writer.printAnswer(response);
+    public static void main(String[] args) {
+        Writer writer = new ConsoleWriter();
+        Reader reader = new ConsoleReader();
+        Handler handler = new SimpleHandler();
+        while (true) {
+            Request message = reader.readRequest();
+            Response response = handler.requestHandler(message);
+            writer.printAnswer(response);
+        }
     }
 
 
